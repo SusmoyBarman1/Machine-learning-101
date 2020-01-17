@@ -17,15 +17,19 @@ def gradient_descent(x,y):
         
         #basic hypothesis
         y_predicted = m_curr * x + b_curr
+        
         #determining the cost function -> Mean Squared Error
-        cost = (1/n) * sum([val**2 for val in (y-y_predicted)])
+        cost = (1/(2*n)) * sum([val**2 for val in (y-y_predicted)])
+        
         # Partial Derivative of cost function
         # we are doing the derivative of cost function, because every step we go through the cost function.
-        md = -(2/n)*sum(x*(y-y_predicted))
-        bd = -(2/n)*sum(y-y_predicted)
+        md = -(1/n)*sum(x*(y-y_predicted))
+        bd = -(1/n)*sum(y-y_predicted)
+        
         # our new point after the previous jump step
         m_curr = m_curr - learning_rate * md
         b_curr = b_curr - learning_rate * bd
+        
         #print ("m {}, b {}, cost {} iteration {}".format(m_curr,b_curr,cost, i))
 
     return m_curr, b_curr
