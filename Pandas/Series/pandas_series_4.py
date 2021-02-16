@@ -1,6 +1,0 @@
-#import the pandas library and aliasing as pd
-import pandas as pd
-import numpy as np
-data = {'a' : 0., 'b' : 1., 'c' : 2.}  #Dictionary
-s = pd.Series(data)
-print(s)
