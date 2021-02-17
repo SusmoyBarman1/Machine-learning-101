@@ -9,7 +9,7 @@ import pandas as pd
 import numpy as np
 
 #Create a Dictionary of series
-d = {'Name':pd.Series(['Tom','James','Ricky','Vin','Steve','Smith','Jack',
+d = {'Name':pd.Series(['Tom','James','Ricky','Vin','James','Smith','Jack',
    'Lee','David','Gasper','Betina','Andres']),
    'Age':pd.Series([25,26,25,23,30,29,23,34,40,30,51,46]),
    'Rating':pd.Series([4.23,3.24,3.98,2.56,3.20,4.6,3.8,3.78,2.98,4.80,4.10,3.65])
@@ -43,4 +43,11 @@ print('\nReturns the Bressel standard deviation of the numerical columns\n', df.
 describe(): Summarizing Data
 """
 print('\nThe describe() function computes a summary of statistics pertaining to the DataFrame columns.\n')
+print('Only numbers:-\n')
 print(df.describe())
+
+print('\nDescribe, Only object containing columns\n')
+print(df.describe(include=['object']))
+
+print('\nDescribe, all columns\n')
+print(df.describe(include='all'))
