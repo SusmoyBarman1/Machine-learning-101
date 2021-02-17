@@ -18,7 +18,7 @@ df = pd.DataFrame([[1, 2, 3],
                    index = ['row1', 'row2', 'row3', 'row4'],
                    columns=['col1', 'col2', 'col3'])
 print(df)
-print('\nAdd 10 with every element\n')
+print('\nAdd 10 with every element with predefined function\n')
 print(df.pipe(adder, 10))
 
 
